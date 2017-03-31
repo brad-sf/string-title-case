@@ -6,6 +6,7 @@
  */
 const titleCase = (title, exclusions = []) => {
     return title
+        .trim()
         .toLowerCase()
         .split(' ')
         .map(function(str, i) {
