@@ -1,6 +1,6 @@
 {
   "name": "string-title-case",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Capitalises first character of each word in string except words from an exclusion array.",
   "main": "index.js",
   "scripts": {
