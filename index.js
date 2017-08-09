@@ -1,27 +1,32 @@
 /**
  * Title Case a String whilst Excluding Certain Words
- * @param  {string} title      String to be "title cased"
- * @param  {array} exclusions  Array of strings to be excluded from title casing [optional]
- * @return {string}            Title-cased string
+ * @param  {string} title String to be "title cased"
+ * @param  {array} exclusions Array of strings to be excluded from title casing [optional]
+ * @return {string} Title-cased string
  */
 const titleCase = (title, exclusions = []) => {
-    return title
-        .trim()
-        .toLowerCase()
-        .split(' ')
-        .map(function(str, i) {
-            if (exclusions.indexOf(str) === -1)
-                return capitalizeFirstChar(str);
-            else
-                return str;
-        })
-        .join(' ');
-}
+	return title
+		.trim()
+		.toLowerCase()
+		.split(' ')
+		.map(function filterWords(word) {
+			if (exclusions.includes(word))
+				return word;
+			else
+				return capitaliseFirstChar(word);
+		})
+		.join(' ');
+};
 
-const capitalizeFirstChar = word => {
-    return word.split('').map(function(w,i) {
-        return i == 0 ? w.toUpperCase() : w;
-    }).join('');
-}
+/**
+ * Capitalise the first character in a string
+ * @param word
+ * @returns {string}
+ */
+const capitaliseFirstChar = (word) => {
+	return word.split('').map(function(w,i) {
+		return i == 0 ? w.toUpperCase() : w;
+	}).join('');
+};
 
-exports.titleCase = titleCase;
+module.exports = titleCase;

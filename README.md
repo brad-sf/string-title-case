@@ -3,21 +3,16 @@
 Capitalises first character of each word in string except words from the exclusion array.
 
 ## Installation
-`npm install string-title-case`
-
-## Usage
-Node.JS:
 ```javascript
-const {titleCase} = require('string-title-case');
-
-console.log( titleCase("hello TO The world", ['to','the']) ); // Hello to the World
-console.log( titleCase("g'day mate") ); // G'day Mate
+npm install string-title-case
 ```
 
-ES6:
+## Usage
 ```javascript
-import {titleCase} from 'string-title-case';
+const titleCase = require('string-title-case');
 
-console.log( titleCase("hello TO The world", ['to','the']) ); // Hello to the World
-console.log( titleCase("g'day mate") ); // G'day Mate
+const myString = 'This messAge IS the best!';
+const myTitleCasedString = titleCase(myString, ['is', 'the']);
+
+console.log(myTitleCasedString); // 'This Message is the Best!'
 ```
