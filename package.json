@@ -21,5 +21,6 @@
   "bugs": {
     "url": "https://github.com/bradleyflood/string-title-case/issues"
   },
-  "homepage": "https://github.com/bradleyflood/string-title-case#readme"
+  "homepage": "https://github.com/bradleyflood/string-title-case#readme",
+  "dependencies": {}
 }

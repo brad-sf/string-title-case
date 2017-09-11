@@ -1,4 +1,10 @@
 /**
+ * Valid word starting characters
+ * @type {[string,string,string,string]}
+ */
+const CONTAINERS = ['(', '[', '{'];
+
+/**
  * Title Case a String whilst Excluding Certain Words
  * @param  {string} title String to be "title cased"
  * @param  {array} exclusions Array of strings to be excluded from title casing [optional]
@@ -9,7 +15,7 @@ const titleCase = (title, exclusions = []) => {
 		.trim()
 		.toLowerCase()
 		.split(' ')
-		.map(function filterWords(word) {
+		.map((word) => {
 			if (exclusions.includes(word))
 				return word;
 			else
@@ -24,9 +30,14 @@ const titleCase = (title, exclusions = []) => {
  * @returns {string}
  */
 const capitaliseFirstChar = (word) => {
-	return word.split('').map(function(w,i) {
-		return i == 0 ? w.toUpperCase() : w;
-	}).join('');
+	return word
+		.split('')
+		.map((letter, index, array) => {
+			return index === 0 || CONTAINERS.includes(array[index - 1]) ? letter.toUpperCase() : letter;
+		})
+		.join('');
 };
+
+
 
 module.exports = titleCase;
